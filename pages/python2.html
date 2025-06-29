@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Course </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<style>
+     #certificateCanvas {
+      border: 2px solid #ccc;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 700px;
+    }
+</style>
+<body>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/UrsmFxEIp5k?si=wtevt2wlbz5ql4xI" 
+     title="YouTube video player" 
+     frameborder="0" 
+     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+     referrerpolicy="strict-origin-when-cross-origin" 
+     allowfullscreen>
+    </iframe>
+ <section id="certificate" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Get Your Certificate</h2>
+      <div class="mb-3">
+        <input type="text" id="certName" class="form-control w-50 mx-auto" placeholder="Enter your name">
+      </div>
+      <button onclick="generateCertificate()" class="btn btn-success">Download Certificate</button>
+      <canvas id="certificateCanvas" class="mx-auto d-block mt-4"></canvas>
+    </div>
+  </section>
+
+  <script>
+    function generateCertificate() {
+      const canvas = document.getElementById('certificateCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 700;
+      canvas.height = 500;
+
+      // Background
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = '#000';
+      ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+
+      // Header
+      ctx.fillStyle = '#000';
+      ctx.font = '30px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('Certificate of Completion', canvas.width / 2, 100);
+
+      // Awarded to
+      ctx.font = '20px Arial';
+      ctx.fillText('This is awarded to', canvas.width / 2, 180);
+
+      // Name
+      const name = document.getElementById('certName').value;
+      ctx.font = '28px Georgia';
+      ctx.fillText(name || 'Your Name', canvas.width / 2, 230);
+
+      // Date & Course
+      ctx.font = '18px Arial';
+      ctx.fillText('For successfully completing a Web Development course', canvas.width / 2, 280);
+      ctx.fillText('Date: ' + new Date().toLocaleDateString(), canvas.width / 2, 330);
+
+      // Download
+      const link = document.createElement('a');
+      link.download = 'Certificate - ' + (name || 'User') + '.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  </script>
+
+</body>
+</html>
