@@ -43,6 +43,8 @@ Navigate into the folder and open index.html in your browser, or
 
 Use Live Server in VS Code for better experience
 
+---
+
 🧪 Usage
 Browse the homepage to explore categories
 
@@ -54,12 +56,14 @@ Scroll to view the embedded location map and team section
 
 Complete a course to generate a custom certificate
 
-
+---
 📬 Contact
 Have questions or feedback?
 📧 Email: hajisaad029@gmail.com
-🌐 LinkedIn: Your Profile
+🌐 LinkedIn: https://www.linkedin.com/in/saadhaji2007/
+---
 
 📝 License
-This project is licensed under the MIT License.
+📄 This project is licensed under the [MIT License](./LICENSE).
+
 
